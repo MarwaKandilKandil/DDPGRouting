@@ -121,9 +121,8 @@ def run():
 		time.sleep(timeTotal)
 	print("\n \n Dropping Links for testing")
 
-	#src_drop,dst_drop = getRandomPair(net)
-	net.configLinkStatus("s4","s5",'down')
-	print("----Link Dropped---- ","s4","  ","s5")
+	net.configLinkStatus(src_drop,dst_drop,'down')
+	print("----Link Dropped---- ",src_drop,dst_drop)
 	timeTotal = 250
 	for k in range(10):
 		print("Traffic round ",k)
