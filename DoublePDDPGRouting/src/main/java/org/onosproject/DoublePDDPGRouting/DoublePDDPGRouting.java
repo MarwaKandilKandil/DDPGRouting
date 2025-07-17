@@ -339,12 +339,10 @@ public class DoublePDDPGRouting {
 
         //create_random_weights(weight_matrix);
         my_timer_task();
-        //First message in Log file
+        
         try {
             myWriter = new FileWriter("/home/morakan/MK_Files/DPLogs/myDPRoutinglog.txt ");//me
             myWriter2 = new FileWriter("/home/morakan/MK_Files/DPLogs/myDPResults.txt ");//me
-
-            System.out.println("Strated writing !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");//me
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -382,11 +380,7 @@ public class DoublePDDPGRouting {
         writeToMyLog("I am Starting Env..." + "\n");
 
 
-        //ddpg_test();
-        //run_random(0);
-        //ddpg_agent();
-        //ddpg_PER_agent();
-        //ddpg_doublePER_agent();
+
         //agent = 0,        --> GAMS
         //agent = 1,rand =0 -->OSPF constant link weights
         //agent = 1,rand =1 -->OSPF random link weights
@@ -622,12 +616,12 @@ public class DoublePDDPGRouting {
         Boolean packetOutOfppTableEnabled =
                 Tools.isPropertyEnabled(properties, PACKET_OUT_OFPP_TABLE);
         if (packetOutOfppTableEnabled == null) {
-            //me
+            
             //writeToMyLog("OFPP_TABLE port is not configured, "   +  "using current value of "+ packetOutOfppTable+"\n");
             //log.info("OFPP_TABLE port is not configured, "   +  "using current value of {}", packetOutOfppTable);
         } else {
             packetOutOfppTable = packetOutOfppTableEnabled;
-            //me
+           
             //String p_outTable = packetOutOfppTable ? "enabled" : "disabled";
             //writeToMyLog("Configured. Forwarding using OFPP_TABLE port is "+p_outTable+"\n");
             //log.info("Configured. Forwarding using OFPP_TABLE port is {}",packetOutOfppTable ? "enabled" : "disabled");
@@ -636,12 +630,12 @@ public class DoublePDDPGRouting {
         Boolean ipv6ForwardingEnabled =
                 Tools.isPropertyEnabled(properties, IPV6_FORWARDING);
         if (ipv6ForwardingEnabled == null) {
-            //me
+            
             //writeToMyLog( "IPv6 forwarding is not configured, "   +  "using current value of "+ ipv6Forwarding+"\n");
             //log.info("IPv6 forwarding is not configured, "   +  "using current value of {}", ipv6Forwarding);
         } else {
             ipv6Forwarding = ipv6ForwardingEnabled;
-            //me
+            
             //String ipF = ipv6Forwarding ? "enabled" : "disabled";
             //writeToMyLog( "Configured. IPv6 forwarding is "+ipF+"\n");
             //log.info("Configured. IPv6 forwarding is {}",ipv6Forwarding ? "enabled" : "disabled");
@@ -650,12 +644,12 @@ public class DoublePDDPGRouting {
         Boolean matchDstMacOnlyEnabled =
                 Tools.isPropertyEnabled(properties, MATCH_DST_MAC_ONLY);
         if (matchDstMacOnlyEnabled == null) {
-            //me
+            
             //writeToMyLog( "Match Dst MAC is not configured, "   +  "using current value of "+matchDstMacOnly+"\n");
             //log.info("Match Dst MAC is not configured, "   +  "using current value of {}", matchDstMacOnly);
         } else {
             matchDstMacOnly = matchDstMacOnlyEnabled;
-            //me
+            
             //String mMac = matchDstMacOnly ? "enabled" : "disabled";
             //writeToMyLog( "Configured. Match Dst MAC Only is "+mMac+"\n");
             //log.info("Configured. Match Dst MAC Only is {}",matchDstMacOnly ? "enabled" : "disabled");
@@ -664,12 +658,12 @@ public class DoublePDDPGRouting {
         Boolean matchVlanIdEnabled =
                 Tools.isPropertyEnabled(properties, MATCH_VLAN_ID);
         if (matchVlanIdEnabled == null) {
-            //me
+            
             //writeToMyLog( "Matching Vlan ID is not configured, "   +  "using current value of "+ matchVlanId+"\n");
             //log.info("Matching Vlan ID is not configured, "   +  "using current value of {}", matchVlanId);
         } else {
             matchVlanId = matchVlanIdEnabled;
-            //me
+            
             //String mV = matchVlanId ? "enabled" : "disabled";
             //writeToMyLog( "Configured. Matching Vlan ID is "+ mV+"\n");
             //log.info("Configured. Matching Vlan ID is {}",matchVlanId ? "enabled" : "disabled");
@@ -678,12 +672,12 @@ public class DoublePDDPGRouting {
         Boolean matchIpv4AddressEnabled =
                 Tools.isPropertyEnabled(properties, MATCH_IPV4_ADDRESS);
         if (matchIpv4AddressEnabled == null) {
-            //me
+            
             //writeToMyLog( "Matching IPv4 Address is not configured, "   +  "using current value of "+ matchIpv4Address+"\n");
             //log.info("Matching IPv4 Address is not configured, "   +  "using current value of {}", matchIpv4Address);
         } else {
             matchIpv4Address = matchIpv4AddressEnabled;
-            //me
+            
             //String mIP = matchIpv4Address ? "enabled" : "disabled";
             //writeToMyLog( "Configured. Matching IPv4 Addresses is "+mIP+"\n");
             //log.info("Configured. Matching IPv4 Addresses is {}",matchIpv4Address ? "enabled" : "disabled");
@@ -692,12 +686,12 @@ public class DoublePDDPGRouting {
         Boolean matchIpv4DscpEnabled =
                 Tools.isPropertyEnabled(properties, MATCH_IPV4_DSCP);
         if (matchIpv4DscpEnabled == null) {
-            //me
+            
             //writeToMyLog( "Matching IPv4 DSCP and ECN is not configured, "   +  "using current value of "+ matchIpv4Dscp+"\n");
             //log.info("Matching IPv4 DSCP and ECN is not configured, "   +  "using current value of {}", matchIpv4Dscp);
         } else {
             matchIpv4Dscp = matchIpv4DscpEnabled;
-            //me
+            
             //String mIP = matchIpv4Dscp ? "enabled" : "disabled";
             //writeToMyLog( "Configured. Matching IPv4 DSCP and ECN is "+mIP+"\n");
             //log.info("Configured. Matching IPv4 DSCP and ECN is {}",matchIpv4Dscp ? "enabled" : "disabled");
@@ -706,12 +700,12 @@ public class DoublePDDPGRouting {
         Boolean matchIpv6AddressEnabled =
                 Tools.isPropertyEnabled(properties, MATCH_IPV6_ADDRESS);
         if (matchIpv6AddressEnabled == null) {
-            //me
+            
             //writeToMyLog("Matching IPv6 Address is not configured, "   +  "using current value of "+ matchIpv6Address +"\n");
             //log.info("Matching IPv6 Address is not configured, "   +  "using current value of {}", matchIpv6Address);
         } else {
             matchIpv6Address = matchIpv6AddressEnabled;
-            //me
+            
             //String mAddrs = matchIpv6Address ? "enabled" : "disabled";
             //writeToMyLog( "Configured. Matching IPv6 Addresses is "+ mAddrs+"\n");
             //log.info("Configured. Matching IPv6 Addresses is {}",matchIpv6Address ? "enabled" : "disabled");
@@ -720,12 +714,12 @@ public class DoublePDDPGRouting {
         Boolean matchIpv6FlowLabelEnabled =
                 Tools.isPropertyEnabled(properties, MATCH_IPV6_FLOW_LABEL);
         if (matchIpv6FlowLabelEnabled == null) {
-            //me
+            
             //writeToMyLog( "Matching IPv6 FlowLabel is not configured, "   +  "using current value of "+ matchIpv6FlowLabel+"\n");
             //log.info("Matching IPv6 FlowLabel is not configured, "   +  "using current value of {}", matchIpv6FlowLabel);
         } else {
             matchIpv6FlowLabel = matchIpv6FlowLabelEnabled;
-            //me
+            
             //String mIP = matchIpv6FlowLabel ? "enabled" : "disabled";
             //writeToMyLog("Configured. Matching IPv6 FlowLabel is "+ mIP +"\n");
             //log.info("Configured. Matching IPv6 FlowLabel is {}",matchIpv6FlowLabel ? "enabled" : "disabled");
@@ -734,12 +728,12 @@ public class DoublePDDPGRouting {
         Boolean matchTcpUdpPortsEnabled =
                 Tools.isPropertyEnabled(properties, MATCH_TCP_UDP_PORTS);
         if (matchTcpUdpPortsEnabled == null) {
-            //me
+            
             //writeToMyLog("Matching TCP/UDP fields is not configured, "   +  "using current value of "+ matchTcpUdpPorts +"\n");
             //log.info("Matching TCP/UDP fields is not configured, "   +  "using current value of {}", matchTcpUdpPorts);
         } else {
             matchTcpUdpPorts = matchTcpUdpPortsEnabled;
-            //me
+            
             //String bool1 = matchTcpUdpPorts ? "enabled" : "disabled";
             //writeToMyLog("Configured. Matching TCP/UDP fields is "+ bool1 +"\n");
             //log.info("Configured. Matching TCP/UDP fields is {}",matchTcpUdpPorts ? "enabled" : "disabled");
@@ -748,12 +742,12 @@ public class DoublePDDPGRouting {
         Boolean matchIcmpFieldsEnabled =
                 Tools.isPropertyEnabled(properties, MATCH_ICMP_FIELDS);
         if (matchIcmpFieldsEnabled == null) {
-            //me
+            
             //writeToMyLog( "Matching ICMP (v4 and v6) fields is not configured, "   +  "using current value of "+ matchIcmpFields+"\n");
             //log.info("Matching ICMP (v4 and v6) fields is not configured, "   +  "using current value of {}", matchIcmpFields);
         } else {
             matchIcmpFields = matchIcmpFieldsEnabled;
-            //me
+            
             //String bool2 = matchIcmpFields ? "enabled" : "disabled";
             //writeToMyLog("Configured. Matching ICMP (v4 and v6) fields is "+ bool2 +"\n");
             //log.info("Configured. Matching ICMP (v4 and v6) fields is {}",matchIcmpFields ? "enabled" : "disabled");
@@ -762,12 +756,12 @@ public class DoublePDDPGRouting {
         Boolean ignoreIpv4McastPacketsEnabled =
                 Tools.isPropertyEnabled(properties, IGNORE_IPV4_MCAST_PACKETS);
         if (ignoreIpv4McastPacketsEnabled == null) {
-            //me
+            
             //writeToMyLog("Ignore IPv4 multi-cast packet is not configured, "   +  "using current value of "+ ignoreIPv4Multicast +"\n");
             log.info("Ignore IPv4 multi-cast packet is not configured, " + "using current value of {}", ignoreIPv4Multicast);
         } else {
             ignoreIPv4Multicast = ignoreIpv4McastPacketsEnabled;
-            //me
+            
             //String bool3 = ignoreIPv4Multicast ? "enabled" : "disabled";
             //writeToMyLog("Configured. Ignore IPv4 multicast packets is "+ bool3+"\n");
             //log.info("Configured. Ignore IPv4 multicast packets is {}",ignoreIPv4Multicast ? "enabled" : "disabled");
@@ -775,24 +769,24 @@ public class DoublePDDPGRouting {
         Boolean recordMetricsEnabled =
                 Tools.isPropertyEnabled(properties, RECORD_METRICS);
         if (recordMetricsEnabled == null) {
-            //me
+            
             //writeToMyLog("IConfigured. Ignore record metrics  is "  + recordMetrics +  ", using current value of "+ recordMetrics+"\n");
             log.info("IConfigured. Ignore record metrics  is {} ," + "using current value of {}", recordMetrics);
         } else {
             recordMetrics = recordMetricsEnabled;
-            //me
+            
             //String bool4 = recordMetrics ? "enabled" : "disabled";
             //writeToMyLog("Configured. record metrics  is "+bool4+"\n");
             //log.info("Configured. record metrics  is {}",recordMetrics ? "enabled" : "disabled");
         }
 
         flowTimeout = Tools.getIntegerProperty(properties, FLOW_TIMEOUT, FLOW_TIMEOUT_DEFAULT);
-        //me
+        
         //writeToMyLog("Configured. Flow Timeout is configured to "+ flowTimeout +" seconds"+"\n");
         //log.info("Configured. Flow Timeout is configured to {} seconds", flowTimeout);
 
         flowPriority = Tools.getIntegerProperty(properties, FLOW_PRIORITY, FLOW_PRIORITY_DEFAULT);
-        //me
+        
         //writeToMyLog("Configured. Flow Priority is configured to "+ flowPriority+"\n");
         //log.info("Configured. Flow Priority is configured to {}", flowPriority);
     }
@@ -806,18 +800,6 @@ public class DoublePDDPGRouting {
         this.MyTimerTask = new TimerTask() {
             @Override
             public void run() {
-                //me
-                //writeToMyLog("Current_time_is=" + System.currentTimeMillis() + "\n");
-                //log.info("Current_time_is=" + System.currentTimeMillis());
-                //mystatistics();
-                //mytopolgyfinder();
-                //Show_Matrix(Node_Matrix);
-                //log.info("I am calculating a path");
-                //me
-                //writeToMyLog("I am calculating a path" + "\n");
-                //installPath("10.0.0.1","10.0.0.3");
-                //installPath2("10.0.0.1", "10.0.0.3");
-                //ddpg_test();
                 my_timer_task();
             }
         };
@@ -2548,7 +2530,7 @@ public class DoublePDDPGRouting {
     }
     private void print_link_stat(float[][] w, int l) {
         String str = "\n";
-        //me
+        
         if (l == 1) {
             writeToMyLog("\nprint_link_stat -- Links_latency: " + w.length + "\n");
         } else if (l == 2) {
@@ -2563,19 +2545,19 @@ public class DoublePDDPGRouting {
                 str += String.valueOf(w[i][j]) + "    ";
             str += "\n";
         }
-        //me
+        
         writeToMyLog(str + "\n");
 
     }
 
     private void print_pwr_stat(double[] pwr) {
         String str = "\n";
-        //me
+        
         writeToMyLog("\nprint_pwr_stat -- pwr: " + pwr.length + "\n");
         for (int i = 0; i < pwr.length; i++) {
                 str += String.valueOf(pwr[i]) + "    ";
         }
-        //me
+        
         writeToMyLog(str + "\n");
 
 
