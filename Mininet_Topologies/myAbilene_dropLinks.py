@@ -109,9 +109,8 @@ def run():
 	
 		
 	print("Stopping traffic for training")
-	#src_drop,dst_drop = getRandomPair(net)
-	net.configLinkStatus("s8","s10",'down')
-	print("----Link Dropped---- ","s8","  ","s10")
+	net.configLinkStatus(src_drop,dst_drop,'down')
+	print("----Link Dropped---- ",src_drop,dst_drop)
 	timeTotal = 300
 	for k in range(10):
 		print("Traffic round ",k)
