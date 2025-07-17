@@ -19,10 +19,7 @@ import org.knowm.xchart.XYChartBuilder;
 import org.knowm.xchart.XYSeries;
 import org.knowm.xchart.style.Styler;
 
-/**
- *
- * @author zoran sevarac
- */
+
 public class Plot {
     public static void lineChart(String title, String xAxisLabel, String yAxisLabel, double[][] data) {
         List<Double> xData = new ArrayList<>();
